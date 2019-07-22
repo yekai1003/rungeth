@@ -181,3 +181,42 @@ true
 ```
 
 通过实验，我们使用多个节点共同组成一个私有网络，关键点是创世块文件要相同，大家使用相同的网络id。
+
+
+
+测试数据：
+
+```
+> admin.nodeInfo
+{
+  enode: "enode://b93e6e616e73f3e2ac36453fb712ec0c9573459c4554ccaa19be8946e20353ba4af2ec8e63766dfba83c74ed48107433ccbefed261daa6e6003d4fdeb31dcce0@127.0.0.1:30303",
+  enr: "0xf896b8407047aba1bdc2bb89ccdb591645a608e8d205620b2fce9e0b2bb5eb54ac173089495a1fc71fadb6f2468b52f9d82f05464284eac398f9c7ee7f8118b0808a50e90183636170c6c5836574683f826964827634826970847f00000189736563703235366b31a102b93e6e616e73f3e2ac36453fb712ec0c9573459c4554ccaa19be8946e20353ba8374637082765f8375647082765f",
+  id: "3430c6c8b3a5d4d5951b662d9295b535910c72ec52741ffe89b9cdd6766245e8",
+  ip: "127.0.0.1",
+  listenAddr: "[::]:30303",
+  name: "Geth/v1.8.22-stable/darwin-amd64/go1.11.5",
+  ports: {
+    discovery: 30303,
+    listener: 30303
+  },
+  protocols: {
+    eth: {
+      config: {
+        chainId: 18,
+        eip150Hash: "0x0000000000000000000000000000000000000000000000000000000000000000",
+        eip155Block: 0,
+        eip158Block: 0,
+        homesteadBlock: 0
+      },
+      difficulty: 2,
+      genesis: "0xc1d47d80957422239f97de9b123499f1e6230ddbf3bc2f2c5af1b033c9d9ea3e",
+      head: "0xc1d47d80957422239f97de9b123499f1e6230ddbf3bc2f2c5af1b033c9d9ea3e",
+      network: 18
+    }
+  }
+}
+```
+
+```
+192.168.1.24
+```
