@@ -342,7 +342,7 @@ contract auction {
 ## 9. ballot.sol 
 
 ```
-pragma solidity^0.4.24;
+pragma solidity^0.5.0;
 
 contract ballot {
     //xuan min xin xi jie gou
@@ -363,7 +363,7 @@ contract ballot {
     mapping(address=>Voter) public voters;//xuan min xin xi 
     
     //gou zao hanshu 
-    constructor(bytes32[] _proposalNames) public {
+    constructor(bytes32[] memory _proposalNames) public {
         chairman = msg.sender;
         voters[chairman].weight = 1;//zhu chi ren 1 piao 
         uint i = 0;
