@@ -26,7 +26,7 @@ sudo apt-get install ethereum
 
 [以太坊客户端下载地址](https://geth.ethereum.org/downloads/)
 
-<img src="/Users/yekai/gowork/src/github.com/yekai1003/rungeth/assets/image-20191111144322791.png" alt="image-20191111144322791" style="zoom:50%" align="left" />
+<img src="assets/image-20191111144322791.png" alt="image-20191111144322791" style="zoom:50%" align="left" />
 
 下载
 
