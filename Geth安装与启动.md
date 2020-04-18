@@ -1,6 +1,6 @@
 ## 1. Geth&Tools 安装
 
-Geth的下载地址可以从https://geth.ethereum.org/downloads/找到，这也是官方提供的下载地址。
+Geth的下载地址可以从 https://geth.ethereum.org/downloads/  找到，这也是官方提供的下载地址。
 
 ### 1.1 Windows系统安装
 
