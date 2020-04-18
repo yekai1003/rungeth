@@ -8,4 +8,4 @@
 
 ## 2. 钱包工具介绍
 
-[Metamask安装](./Metamsk安装.md)
+[Metamask安装](./Metamask安装.md)
