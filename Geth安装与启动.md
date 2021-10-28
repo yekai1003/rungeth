@@ -215,7 +215,10 @@ bogon:~ yk$export PATH=$HOME/geth-home:$PATH
 bogon:~ yk$echo `export PATH=$HOME/geth-home:$PATH` >> ~/.bash_profile
 ```
 
-
+1.10.11版本的下载地址：
+```sh
+https://gethstore.blob.core.windows.net/builds/geth-alltools-darwin-amd64-1.10.11-7231b3ef.tar.gz
+```
 
 
 
@@ -371,7 +374,7 @@ at block: 0 (Thu, 01 Jan 1970 08:00:00 CST)
 ### 2.3 开发者模式启动
 
 ```sh
-geth --datadir ./devdata --networkid 18 --port 30303 --rpc --rpcaddr 0.0.0.0 --rpcvhosts "*"  --rpcport 8545 --rpcapi 'db,net,eth,web3,personal' --rpccorsdomain "*"  --dev --dev.period 1 console 2> 1.log
+geth --datadir ./devdata --networkid 18 --port 30303 --http --http.addr 0.0.0.0 --http.vhosts "*"  --http.port 8545 --http.api 'db,net,eth,web3,personal' --http.corsdomain "*"  --dev --dev.period 1 console 2> 1.log
 ```
 
 开发者的好处有几点：
