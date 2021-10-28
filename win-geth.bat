@@ -1,1 +1,1 @@
-geth --datadir ./data --networkid 18 --port 30303 --rpc --rpcaddr 0.0.0.0 --rpcvhosts "*"  --rpcport 8545 --rpcapi 'db,net,eth,web3,personal' --rpccorsdomain "*" --allow-insecure-unlock  console 2> 1.log
+geth --datadir ./data --networkid 1008  --http --http.addr 0.0.0.0 --http.vhosts "*" --http.api "db,net,eth,web3,personal" --http.corsdomain "*" --snapshot=false --mine --miner.threads 1 --allow-insecure-unlock  console 2> 1.log

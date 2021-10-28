@@ -14,6 +14,8 @@ Windows系统，我们推荐下载可执行的二进制文件，这种方式最�
 
 1.9.10版本的下载链接为：https://gethstore.blob.core.windows.net/builds/geth-alltools-windows-amd64-1.9.10-58cf5686.zip
 
+1.10.11版本的下载链接为：https://gethstore.blob.core.windows.net/builds/geth-alltools-windows-amd64-1.10.11-7231b3ef.zip
+
 下载后，对文件点击右键，解压缩。
 
 <img src="assets/image-20200314212233865.png" alt="image-20200314212233865"  />
@@ -119,6 +121,12 @@ sudo apt-get install ethereum
 mkdir ~/install
 cd ~/install
 wget https://gethstore.blob.core.windows.net/builds/geth-alltools-linux-amd64-1.9.10-58cf5686.tar.gz
+```
+
+1.10.11版本的地址为：
+
+```sh
+https://gethstore.blob.core.windows.net/builds/geth-alltools-linux-arm64-1.10.11-7231b3ef.tar.gz
 ```
 
 步骤04：解压缩下载的压缩包
@@ -236,23 +244,24 @@ geth --rinkeby --fast --cache=512 console
 
 ```json
 {
-  "config": {
-        "chainId": 18,
-        "homesteadBlock": 0,
-        "eip150Block": 0,
-        "eip155Block": 0,
-        "eip158Block": 0
+    "config": {
+      "chainId": 1008,
+      "homesteadBlock": 0,
+      "eip150Block": 0,
+      "eip155Block": 0,
+      "eip158Block": 0,
+      "byzantiumBlock": 0,
+      "constantinopleBlock": 0,
+      "petersburgBlock": 0,
+      "ethash": {}
     },
-  "alloc"      : {},
-  "coinbase"   : "0x0000000000000000000000000000000000000000",
-  "difficulty" : "0x2",
-  "extraData"  : "",
-  "gasLimit"   : "0xffffffff",
-  "nonce"      : "0x0000000000000042",
-  "mixhash"    : "0x0000000000000000000000000000000000000000000000000000000000000000",
-  "parentHash" : "0x0000000000000000000000000000000000000000000000000000000000000000",
-  "timestamp"  : "0x00"
-}
+    "difficulty": "1",
+    "gasLimit": "8000000",
+    "alloc": {
+      "7df9a875a174b3bc565e6424a0050ebc1b2d1d82": { "balance": "300000" },
+      "f41c74c9ae680c1aa78f42e5647a62f353b7bdde": { "balance": "400000" }
+    }
+  }
 ```
 
 创世块文件的部分内容，我们可以简单了解一下：
@@ -314,25 +323,33 @@ data/
 
 
 
-步骤02：启动Geth节点
-
-​	
+步骤02：创建挖矿账户
 
 ```sh
-geth --datadir ./data --networkid 18 --port 30303 --rpc  --rpcport 8545 --rpcapi 'db,net,eth,web3,personal' --rpccorsdomain "*" --gasprice 0 --allow-insecure-unlock  console 2> 1.log
+geth account new --datadir data
+```
+
+创建时需要输入口令，并再次确认口令，不要忘记！！不要忘记！！不要忘记！！
+
+
+
+步骤03：启动Geth节点
+
+```sh
+geth --datadir ./data --networkid 1008  --http --http.addr 0.0.0.0 --http.vhosts "*" --http.api "db,net,eth,web3,personal" --http.corsdomain "*" --snapshot=false --mine --miner.threads 1 --allow-insecure-unlock  console 2> 1.log
 ```
 
 这个命令的启动参数比较长，我们也需要针对参数进行介绍：
 
 - datadir 指定之前初始化的数据目录文件
 - networkid 配置成与配置文件config内的chainId相同值，代表加入哪个网络，私链就自己随意编号即可
-- port 传说中的p2p端口，也就是节点之间互相通信的端口
-- rpc 代表开启远程调用服务，这对我们很重要
-- rpcport 远程服务的端口，默认是8545
-- rpcapi 远程服务提供的远程调用函数集
-- rpccorsdomain 指定可以接收请求来源的域名列表（浏览器访问，必须开启）
-- gasprice gas的单价
+- http  代表开启远程调用服务，这对我们很重要
+- http.port 远程服务的端口，默认是8545
+- http.api 远程服务提供的远程调用函数集
+- http.corsdomain 指定可以接收请求来源的域名列表（浏览器访问，必须开启）
 - allow-insecure-unlock 新版本增加的选项，允许在Geth命令窗口解锁账户
+- mine 开启挖矿
+- miner.threads 设置挖矿的线程数量
 - console 进入管理台
 - 2> 1.log Unix系统下的重定向，将Geth产生的日志输出都重定向到1.log中，以免刷日志影响操作
 
