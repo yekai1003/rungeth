@@ -126,7 +126,7 @@ wget https://gethstore.blob.core.windows.net/builds/geth-alltools-linux-amd64-1.
 1.10.11版本的地址为：
 
 ```sh
-https://gethstore.blob.core.windows.net/builds/geth-alltools-linux-arm64-1.10.11-7231b3ef.tar.gz
+https://gethstore.blob.core.windows.net/builds/geth-alltools-linux-amd64-1.10.11-7231b3ef.tar.gz
 ```
 
 步骤04：解压缩下载的压缩包
