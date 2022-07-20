@@ -132,13 +132,13 @@ https://gethstore.blob.core.windows.net/builds/geth-alltools-linux-amd64-1.10.11
 步骤04：解压缩下载的压缩包
 
 ```sh
-tar zxvf geth-alltools-linux-amd64-1.9.10-58cf5686.tar.gz
+tar zxvf geth-alltools-linux-amd64-1.10.11-7231b3ef.tar.gz
 ```
 
 步骤05：配置环境变量
 
 ```sh
-mv geth-alltools-linux-amd64-1.9.10-58cf5686 ~/geth-home
+mv geth-alltools-linux-amd64-1.10.11-7231b3ef ~/geth-home
 export PATH=$HOME/geth-home:$PATH
 echo `export PATH=$HOME/geth-home:$PATH` >> ~/.bashrc
 ```
@@ -156,7 +156,7 @@ USAGE:
    geth [options] command [command options] [arguments...]
 
 VERSION:
-   1.9.10-stable
+   1.10.11-stable
 
 COMMANDS:
    account                            Manage accounts
@@ -208,14 +208,14 @@ brew install ethereum
 ```sh
 bogon:~ yk$mkdir ~/install
 bogon:~ yk$cd ~/install
-bogon:~ yk$wget https://gethstore.blob.core.windows.net/builds/geth-alltools-darwin-amd64-1.9.10-58cf5686.tar.gz
-bogon:~ yk$tar zxvf geth-alltools-darwin-amd64-1.9.10-58cf5686.tar.gz
-bogon:~ yk$mv geth-alltools-darwin-amd64-1.9.10-58cf5686 ~/geth-home
+bogon:~ yk$wget https://gethstore.blob.core.windows.net/builds/geth-alltools-darwin-amd64-1.10.11-7231b3ef.tar.gz
+bogon:~ yk$tar zxvf geth-alltools-darwin-amd64-1.10.11-7231b3ef.tar.gz
+bogon:~ yk$mv geth-alltools-darwin-amd64-1.10.11-7231b3ef ~/geth-home
 bogon:~ yk$export PATH=$HOME/geth-home:$PATH
 bogon:~ yk$echo `export PATH=$HOME/geth-home:$PATH` >> ~/.bash_profile
 ```
 
-1.10.11版本的下载地址：
+1.10.11的下载地址：
 ```sh
 https://gethstore.blob.core.windows.net/builds/geth-alltools-darwin-amd64-1.10.11-7231b3ef.tar.gz
 ```
@@ -247,24 +247,26 @@ geth --rinkeby --fast --cache=512 console
 
 ```json
 {
-    "config": {
-      "chainId": 1008,
-      "homesteadBlock": 0,
-      "eip150Block": 0,
-      "eip155Block": 0,
-      "eip158Block": 0,
-      "byzantiumBlock": 0,
-      "constantinopleBlock": 0,
-      "petersburgBlock": 0,
-      "ethash": {}
-    },
-    "difficulty": "1",
-    "gasLimit": "8000000",
-    "alloc": {
-      "7df9a875a174b3bc565e6424a0050ebc1b2d1d82": { "balance": "300000" },
-      "f41c74c9ae680c1aa78f42e5647a62f353b7bdde": { "balance": "400000" }
-    }
+  "config": {
+    "chainId": 12345,
+    "homesteadBlock": 0,
+    "eip150Block": 0,
+    "eip155Block": 0,
+    "eip158Block": 0,
+    "byzantiumBlock": 0,
+    "constantinopleBlock": 0,
+    "petersburgBlock": 0,
+    "istanbulBlock": 0,
+    "berlinBlock": 0,
+    "ethash": {}
+  },
+  "difficulty": "1",
+  "gasLimit": "8000000",
+  "alloc": {
+    "7df9a875a174b3bc565e6424a0050ebc1b2d1d82": { "balance": "300000" },
+    "f41c74c9ae680c1aa78f42e5647a62f353b7bdde": { "balance": "400000" }
   }
+}
 ```
 
 创世块文件的部分内容，我们可以简单了解一下：
@@ -284,7 +286,7 @@ geth --rinkeby --fast --cache=512 console
 
 
 ```sh
-geth init genesis.json --datadir ./data
+geth init --datadir ./data genesis.json
 ```
 
 在此步骤，主要是利用创世块进行文件初始化，指定一个数据目录，当看到类似下面的结果代表初始化成功。
@@ -361,7 +363,7 @@ geth --datadir ./data --networkid 1008  --http --http.addr 0.0.0.0 --http.vhosts
 ```sh
 Welcome to the Geth JavaScript console!
 
-instance: Geth/v1.9.6-stable/darwin-amd64/go1.13.1
+instance: Geth/v1.10.11-stable/darwin-amd64/go1.17.1
 at block: 0 (Thu, 01 Jan 1970 08:00:00 CST)
  datadir: /Users/yk/ethdev/yekai1003/rungeth/data
  modules: admin:1.0 debug:1.0 eth:1.0 ethash:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0
@@ -400,7 +402,7 @@ cd rungeth
 bogon:rungeth yk$ ./rungeth.sh 
 Welcome to the Geth JavaScript console!
 
-instance: Geth/v1.9.10-stable/darwin-amd64/go1.13.1
+instance: Geth/v1.10.11-stable/darwin-amd64/go1.17.1
 at block: 0 (Thu, 01 Jan 1970 08:00:00 CST)
  datadir: /Users/yk/ethdev/yekai1003/rungeth/data
  modules: admin:1.0 debug:1.0 eth:1.0 ethash:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0
@@ -415,7 +417,7 @@ at block: 0 (Thu, 01 Jan 1970 08:00:00 CST)
 bogon:rungeth yk$ ./rundevgeth.sh 
 Welcome to the Geth JavaScript console!
 
-instance: Geth/v1.9.10-stable/darwin-amd64/go1.13.1
+instance: Geth/v1.10.11-stable/darwin-amd64/go1.17.1
 coinbase: 0x60b4af4456485a169c725efccd0e22efe019c7d1
 at block: 1 (Tue, 18 Feb 2020 21:31:58 CST)
  datadir: /Users/yk/ethdev/yekai1003/rungeth/devdata
@@ -529,3 +531,40 @@ powershell
 
 .\win-geth.bat
 
+
+
+## 3. 本地安装remixd
+
+remixd可以解决solidity项目开发工程化的问题。需要提前安装nodejs，安装后可以使用npm命令安装
+
+安装remixd命令
+
+```sh
+npm install -g @remix-project/remixd
+```
+
+启动命令，通过-s参数指定某个工程目录，该目录可以作为某个项目（sol文件）开发的根目录
+
+```sh
+remixd -s somedir
+```
+
+例如，计划一本书的第七章准备代码，可以建立一个chapter7目录。
+
+```sh
+remixd -s chapter7
+```
+
+启动后，可以在remix环境（https://remix.ethereum.org/）连接，选择connect to localhost，操作方法如下
+
+![image-20220321155745528](assets/remixd1.png)
+
+在弹出的对话框内点击连接
+
+![image-20220321155922910](assets/remixd2.png)
+
+连接后的效果如下。
+
+![image-20220321160015614](assets/remixd3.png)
+
+之后就可以添加sol文件，编写智能合约了，智能合约会自动在本地磁盘上同步保存。
