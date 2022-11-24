@@ -25,4 +25,6 @@
 以太坊地址：0x02386E198572b188586b0Da40a313f80E50176c8
 
 欢迎使用微信支付：
-<img src="[中行远程.assets/image-20221124211429732.png](https://user-images.githubusercontent.com/18655716/203792595-2e46ff9e-db01-42a2-856e-c97f01d3ad42.png)" alt="image-20221124211429732" style="zoom:50%;" />
+
+
+<img src="https://user-images.githubusercontent.com/18655716/203792595-2e46ff9e-db01-42a2-856e-c97f01d3ad42.png" width = "200" height = "300" alt="" align=center />
