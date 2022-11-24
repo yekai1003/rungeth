@@ -28,3 +28,9 @@
 
 
 <img src="https://user-images.githubusercontent.com/18655716/203792595-2e46ff9e-db01-42a2-856e-c97f01d3ad42.png" width = "200" height = "300" alt="" align=center />
+
+欢迎使用支付宝：
+
+<img src="https://user-images.githubusercontent.com/18655716/203798038-839208af-a1b9-4a80-9111-02608359ff9d.png" width = "200" height = "300" alt="" align=center />
+
+
